@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "pretest": "webpack",
-    "test": "k6 run dist/user.test.js"
+    "test": "k6 run dist/user.test.js",
+    "docker:up": "docker-compose up -d"
   },
   "author": "ernestosbarbosa",
   "license": "ISC",
