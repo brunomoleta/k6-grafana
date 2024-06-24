@@ -1,5 +1,5 @@
 import { group } from 'k6';
-import CustomersRequest from "../request/customers.request";
+import ProductsRequest from "../request/products.request";
 
 export const options = {
     stages: [
@@ -13,9 +13,9 @@ export const options = {
     }
 }
 export default function () {
-    const customers = new CustomersRequest()
+    const products = new ProductsRequest()
     group('post new customer', () => {
-        customers.postCustomer()
+        products.postProduct()
     })
 
 }
