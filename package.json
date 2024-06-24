@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "pretest": "webpack",
-    "test": "k6 run dist/user.test.js",
+    "test:user": "k6 run dist/user.test.js",
+    "test:customers": "k6 run dist/customers.test.js",
+    "test:products": "k6 run dist/products.test.js",
+    "test": "pretest && yarn test:user && yarn test:customers && yarn test:products",
     "docker:up": "docker-compose up -d"
   },
-  "author": "ernestosbarbosa",
+  "author": "bruno-moleta",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
+    "@faker-js/faker": "^8.4.1",
     "babel-loader": "^8.2.3",
     "core-js": "^3.20.3",
     "k6": "^0.0.0",
